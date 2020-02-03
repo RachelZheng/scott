@@ -1,0 +1,6 @@
+numpy>=1.13
+opencv-python>=3.2
+scikit-learn>=0.19
+POT>=0.5.1
+scipy
+argparse
