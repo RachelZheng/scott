@@ -18,8 +18,8 @@ Please see our paper for technical details:
 The library has been tested on Unix system with its mixture-ordered OT solver on Python 3.6+. To install Python package requirements:
 
 ``` bash
-git clone https://github.com/RachelZheng/SCOTT.git
-cd SCOTT/
+git clone https://github.com/RachelZheng/scott.git
+cd scott/
 pip install -r requirements.txt
 ```
 
@@ -39,7 +39,7 @@ Naming criteria:
 Run the pipeline.py file:
 
 ``` bash
-cd SCOTT/
+cd scott/
 python pipeline.py -i [path_seg] -o [path_out] -n [name_dataset]
 ```
 
