@@ -20,7 +20,7 @@ The library has been tested on Unix system with its mixture-ordered OT solver on
 ``` bash
 git clone https://github.com/RachelZheng/scott.git
 cd scott/
-pip install -r requirements.txt
+pip install -r requirement.txt
 ```
 
 Our package also depends on [mop library(>=0.8)](https://bitbucket.org/suppechasper/optimaltransport/downloads/) on [R(>=3.0.0)](https://www.r-project.org/).
