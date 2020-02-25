@@ -20,6 +20,10 @@ class Config:
 		self.path_interm = os.path.join(self.path_out, 'INTERM/')
 		self.path_multiscale = ['/usr/bin/Rscript', '--vanilla', 
 			os.path.join(os.getcwd(),'utils/mapping_multiscale.R')]
+		if not os.path.isdir(self.path_out):
+			os.makedirs(self.path_out)
+		if not os.path.isdir(self.path_interm):
+			os.makedirs(self.path_interm)
 
 		## ---- other mapping setup ----- 
 		self.n_sampling_pts = 10000 # number of points

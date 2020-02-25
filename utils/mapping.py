@@ -46,7 +46,6 @@ def get_pts_mapping(track_data, idx, opt):
 	img_mask_t, opt.n_to_assign = adjust_mask(
 		img_s, img_t_adj, img_mask_s, T, opt.n_to_assign)
 	track_data.set_img(idx + 1, img_mask_t, split='res')
-
 	return
 
 

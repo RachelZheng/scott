@@ -29,10 +29,19 @@ Our package also depends on [mop library(>=0.8)](https://bitbucket.org/suppechas
 
 Put segmentation masks and the ground-truth mask of the first frame in the same folder. Convey folder name to pipeline.py using -i option.
 
-Naming criteria:
+### Naming Criteria:
 
 + Cell segmentation masks: uint16, name as **seg[INDEX, %03d].tif**. 
 + First ground-truth labeling mask: uint16, name as **man_track[INDEX, %03d].tif**. 
+
+### Specify Parameters:
+
+Specify your parameters in "parameter_datasets" of [config.py](utils/config.py), where the parameters are:
+
++ n_pixels_per_cell: int, minimum number of pixels in each cell
++ mitosis_detection: bool, does cell have mitosis or not
++ expResizeWidth: initial image width
++ expResizeHeight: initial image height
 
 ## Usage
 

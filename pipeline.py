@@ -50,11 +50,10 @@ opt.size_img = track_data.size_img
 initialize_tracking(track_data, opt)
 
 # do the mapping with mitosis detection
-opt.mitosis_detection = True
 for i in range(track_data.idx_range[0], track_data.idx_range[1] - 1):
 	get_pts_mapping(track_data, i, opt)
 
 ## output tracking results
-track_data.save_imgs(path_out=opt.path_out)
 os.system('rm -rf %s'%(opt.path_interm))
+track_data.save_imgs(path_out=opt.path_out)
 print("Done. Results see %s"%(opt.path_out))
