@@ -1,9 +1,11 @@
 #!/usr/bin/env Rscript
-library(gmra)
-library(mop)
+sink("/dev/null")
+suppressMessages(library(gmra))
+suppressMessages(library(mop))
 args = commandArgs(trailingOnly=TRUE)
 
 if(length(args) == 0){
+	sink()
 	stop("Input folder must be supplied.n", call.=FALSE)
 } else{
 	folder_data <- args[1]
@@ -24,5 +26,5 @@ if(length(args) == 0){
 	write.csv(from_idx, file.path(folder_data, 'X1_idx.csv'), row.names = FALSE)
 	write.csv(to_idx, file.path(folder_data, 'X2_idx.csv'), row.names = FALSE)
 	write.csv(map, file.path(folder_data, 'map.csv'), row.names = FALSE)
+	sink()
 }
-

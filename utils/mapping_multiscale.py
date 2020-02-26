@@ -56,16 +56,8 @@ def get_multiscale_mapping(pts_s, pts_t, label_s, label_t, opt):
 				# Compute the mapping between the subset of pts
 				np.savetxt(os.path.join(opt.path_interm, 'X1.txt'), pts_s_group, fmt='%s')
 				np.savetxt(os.path.join(opt.path_interm, 'X2.txt'), pts_t_group, fmt='%s')
-				subprocess.call(opt.path_multiscale + [opt.path_interm])
-				# Loading from the saved files
-				n_check = 0
-				# Wait for the first-order image information
-				while not os.path.isfile(os.path.join(opt.path_interm, 'map.csv')) and n_check < 10:
-					time.sleep(3)
-					n_check += 1
-
-				if not os.path.isfile(opt.path_interm + 'map.csv'):
-					print('Can not find the output files!\n')
+				p = subprocess.Popen(opt.path_multiscale + [opt.path_interm])
+				p.wait()
 
 				xs_idx = np.genfromtxt(
 					os.path.join(opt.path_interm, 'X1_idx.csv'), delimiter=',', skip_header=1) 
