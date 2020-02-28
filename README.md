@@ -34,7 +34,7 @@ Put segmentation masks and the ground-truth mask of the first frame in the same 
 + Cell segmentation masks: uint16, name as **seg[INDEX, %03d].tif**. 
 + First ground-truth labeling mask: uint16, name as **man_track[INDEX, %03d].tif**. 
 
-### Specify Parameters:
+### Specifying Parameters:
 
 Specify your parameters in "parameter_datasets" of [config.py](utils/config.py), where the parameters are:
 
@@ -42,6 +42,8 @@ Specify your parameters in "parameter_datasets" of [config.py](utils/config.py),
 + mitosis_detection: bool, does cell have mitosis or not
 + expResizeWidth: initial image width
 + expResizeHeight: initial image height
+
+If cells have mitosis behavior, please specify the mitosis parameters in line 18-22, where the default setup is for PSC-C2DL. We recommend not specifying weight in the first run and trying different mitosis parameters if accuracy improves.
 
 ## Usage
 
@@ -71,7 +73,7 @@ python pipeline.py -i [path_seg] -o [path_out] -n [name_dataset] -w [weight]
 
 ## Acknowledgements
 
-This work is built on many excellent works, which include:
+The code is built on many excellent papers and packages, which include:
 
 + [POT library](https://pot.readthedocs.io/en/stable/)
 + [Multi-scale OT solver](https://bitbucket.org/suppechasper/optimaltransport/src/master/)

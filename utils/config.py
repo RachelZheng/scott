@@ -14,6 +14,17 @@ class Config:
 		(self.n_pixels_per_cell, self.mitosis_detection, self.expResizeWidth, 
 			self.expResizeHeight) = parameter_datasets[name_dataset]
 
+		## --- cell mitosis setup ----
+		# upper-bound of the cell variance
+		self.cell_variance_max = 200
+		# lower-bound of the cell variance
+		self.cell_variance_min = 0.1
+		# upper-bound of the cell proportion in cell merger 
+		self.cell_proportion_max = 0.7
+		self.cell_angle = 70
+		self.divide_ratio = 1
+		self.seg_knn_neigh = 3
+
 		## ----- folders of the algorithm output -----
 		self.path_seg = os.path.abspath(path_seg)
 		self.path_out = os.path.abspath(path_out)
@@ -40,17 +51,6 @@ class Config:
 		## 2nd order mapping setup
 		self.weight_M = 0
 		# number of pts for mapping 2nd order
-
-		## --- cell splitting setup ----
-		# upper-bound of the cell variance
-		self.cell_variance_max = 200
-		# lower-bound of the cell variance
-		self.cell_variance_min = 0.1
-		# upper-bound of the cell proportion in cell merger 
-		self.cell_proportion_max = 0.7
-		self.cell_angle = 70
-		self.divide_ratio = 1
-		self.seg_knn_neigh = 3
 
 		## --- Experiment Related Options ----
 		self.expResizeEnabled = False
